@@ -1,0 +1,80 @@
+<div ng-controller="SWRollController">
+  <div class="container">
+      <div class="row">
+          <div class="col-xs-12 text-center">
+              <h2>Dice Roller</h2>
+          </div>
+      </div>
+      <!--Buttons to choose dice-->
+      <div class="row">
+          <!--Currently using a helper function to set sides, might want to switch if we go to radios.-->
+          <div class="col-xs-4" align="center">
+              <button type="button" ng-click="setSides(4)" class="btn btn-xlrg btn-primary btn-block">d4</button>
+          </div>
+          <div class="col-xs-4" align="center">
+              <button type="button" ng-click="setSides(6)" class="btn btn-xlrg btn-primary btn-block">d6</button>
+          </div>
+          <div class="col-xs-4" align="center">
+              <button type="button" ng-click="setSides(8)" class="btn btn-xlrg btn-primary btn-block">d8</button>
+          </div>            
+      </div>
+      <br/>
+      <div class="row">
+          <div class="col-xs-4" align="center">
+              <button type="button" ng-click="setSides(10)" class="btn btn-xlrg btn-primary btn-block">d10</button>
+          </div>
+          <div class="col-xs-4" align="center">
+              <button type="button" ng-click="setSides(12)" class="btn btn-xlrg btn-primary btn-block">d12</button>
+          </div>
+          <div class="col-xs-4" align="center">
+              <button type="button" ng-click="setSides(20)" class="btn btn-xlrg btn-primary btn-block">d20</button>
+          </div>            
+      </div>
+  </div>
+  <br/>
+  <br/>
+  
+  <!--Second layer of buttons-->
+  <div class="container">
+      <div class="row">
+          <div class="col-xs-4" align="center">
+              <h4>Mod: {{mod}}</h4>
+              <button type="button" class="btn btn-mod-button btn-danger" ng-click="updateMod(-2)">-2</button>
+              <button type="button" class="btn btn-mod-button btn-danger" ng-click="updateMod(-1)">-1</button>
+              <button type="button" class="btn btn-mod-button btn-primary" ng-click="updateMod(+1)">+1</button>
+              <button type="button" class="btn btn-mod-button btn-primary" ng-click="updateMod(+2)">+2</button>
+              <button type="button" class="btn btn-mod-button btn-default" ng-click="updateMod('-')">Reset</button>
+          </div>
+      
+          <div class="col-xs-4" align="center">
+              <h4>Wild: {{wild}}</h4>
+              <button type="button" class="btn btn-mod-button btn-primary" ng-click="setWild(true)">Yes</button>
+              <button type="button" class="btn btn-mod-button btn-danger" ng-click="setWild(false)">No</button>
+          </div>
+          
+          <div class="col-xs-4" align="center">
+              <h4>Dice: d{{sides}}</h4>
+              <button type="button" class="btn btn-lg btn-danger" ng-click="roll()">ROLL!</button>
+          </div>
+      </div>
+  </div>
+  <br/>
+  
+  <!--Display of output-->
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12" align="center">
+          <div class="panel panel-default">
+              <div class="panel-heading text-center">Results</div>
+              <div class="panel-body text-center">
+                  <!--Should probably switch this to ng-repeat, that would be way simpler.-->
+                  <div ng-repeat="roll in output | reverse">
+                      {{roll.rollMsg}} <b>{{roll.rollNum}}</b>
+                      <br/>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

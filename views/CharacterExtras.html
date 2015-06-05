@@ -1,0 +1,97 @@
+<div class="container" ng-controller="CharController">
+    <div class="row">
+        <div class="col-sm-8 textBlock">
+            <h3 class="text-center">Jason Fields - Extras</h3>
+        </div>
+        <div class="col-sm-4">
+            <button class="btn btnPrimaryBordered btn-lg btn-block">Back</button>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">
+                    Contacts:
+                </div>
+                <div class="panel-body text-center">
+                    <div class="table-responsive">
+                        <table class="table table-striped stable-condensed">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Name</th>
+                                    <th class="text-center">Affiliation</th>
+                                    <th class="text-center">Notes</th>
+                                    <th class="text-center">Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="c in cur_char.contacts">
+                                    <td>{{c.name}}</td>
+                                    <td>{{c.affiliation}}</td>
+                                    <td>{{c.text}}</td>
+                                    <td>
+                                        <button class="btn btn-danger btn-xs" ng-click="editChar('contacts', cur_chars.contacts[$index]">Edit</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">
+                    Vehicles:
+                </div>
+                <div class="panel-body text-center">
+                    <div class="table-responsive">
+                        <table class="table table-striped stable-condensed">
+                            <thead>
+                            <tr>
+                                <th class="text-center">Name</th>
+                                <th class="text-center">Acceleration</th>
+                                <th class="text-center">Top Speed</th>
+                                <th class="text-center">Toughness</th>
+                                <th class="text-center">Crew</th>
+                                <th class="text-center">Notes</th>
+                                <th class="text-center">Edit</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="v in cur_char.vehicles">
+                                <td>{{v.name}}</td>
+                                <td>{{v.accel}}</td>
+                                <td>{{v.topSpeed}}</td>
+                                <td>{{v.toughness}}</td>
+                                <td>{{v.crew}}</td>
+                                <td>{{v.text}}</td>
+                                <td>
+                                    <button class="btn btn-danger btn-xs" ng-click="editChar('vehicles', cur_chars.vehicles[$index]">Edit</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">
+                    Character Notes:
+                </div>
+                <div class="panel-body text-center">
+                    {{cur_char.notes}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    

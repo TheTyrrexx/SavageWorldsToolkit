@@ -1,0 +1,107 @@
+<div ng-controller="UserController">
+    <div class="container">
+
+        <!--Modals----------------------------------------------------------------------------------------------------->
+        <div class="modal fade myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="myModal">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <button class="btn btn-danger" ng-click="logout(true)">Logout</button>
+                    <button class="btn btn-primary" ng-click="logout(false)">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade createModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="createModal">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    Email: <input type="text" class="form-control input-md text-center" placeholder="Email..." ng-model="create_email"/>
+                    Password: <input type="text" class="form-control input-md text-center" placeholder="Password..." ng-model="create_pass"/>
+                    Name: <input type="text" class="form-control input-md text-center" placeholder="Name..." ng-model="create_name"/>
+                    <br/>
+                    <button class="btn btn-danger" ng-click="create_acct(create_email, create_pass, create_name, true)">Create</button>
+                    <button class="btn btn-primary" ng-click="create_acct(create_email, create_pass, create_name, false)">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <!--End Modals------------------------------------------------------------------------------------------------->
+
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <div class="page-header">
+                    <h1>Savage Worlds Toolkit!
+                    <br/>
+                    <small>For all your gaming needs.</small></h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="jumbotron">
+                    <div class="container text-center">
+                        <p>
+                            <b>Welcome to the Savage Worlds Toolkit.</b> <br/>
+                            A collection of different tools to help Savage Worlds Game Masters and players get the maximum <br/>
+                            enjoyment out of role playing. The Toolkit provides essential functions to make tabletop game <br/>
+                            sessions run as smooth as possible. <b>Accessible via laptop, tablet, or cell phone</b> means that you can <br/>
+                            always be ready for a game at a moments notice. No more needing to always remember pencils, dice, or<br/>
+                            character sheets. Try integrating a little bit of technology with your tabletop gaming, <br/>
+                            and sign up for an account, <b>completely FREE!</b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">
+                        <b>Current Features:</b>
+                    </div>
+                    <div class="panel-body text-center">
+                        <ul class="boldList">
+                            <li>Dice Roller</li>
+                            <li>Character Sheets and Manager</li>
+                            <li>Item Generator</li>
+                            <li>Full Information Table References</li>
+                            <li>Cloud Save Functionality</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">
+                        <b>Planned Features:</b>
+                    </div>
+                    <div class="panel-body text-center">
+                        <ul class="boldList">
+                            <li>Dungeon Generator</li>
+                            <li>Extra/NPC Generator</li>
+                            <li>Map Tools</li>
+                            <li>Combat Grid and Initiative Tracker</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">
+                        <b>Follow me for updates!</b>
+                    </div>
+                    <div class="panel-body text-center">
+                        Twitter: <a class="darkLink" href="www.twitter.com/tyrrexx">@tyrrexx</a></br>
+                        Youtube: <a class="darkLink" href="www.youtube.com/user/TheTyrrexx">TheTyrrexx</a></br>
+                        Tumblr: <a class="darkLink" href="www.tyrrexx.tumblr.com">Game Bytes</a></br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

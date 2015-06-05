@@ -1,0 +1,395 @@
+<div class="container" ng-controller="CharController">
+    <div class="row">
+        <div class="col-sm-8 textBlock">
+            <h3 class="text-center">Jason Fields - Gear</h3>
+        </div>
+        <div class="col-sm-4">
+            <button class="btn btnPrimaryBordered btn-lg btn-block">Back</button>
+        </div>
+    </div>
+    <br/>
+
+
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10 text-center">
+
+            <div ng-if="gearWEdit === false">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">
+                        Weapons:
+                        <button class="btn btn-primary" ng-click="flipBoolean('gearW')">Edit</button>
+                    </div>
+                    <!--Change skills from array to just individual skills-->
+                    <div class="panel-body text-center">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-condensed">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">Name</th>
+                                    <th class="text-center">Dmg</th>
+                                    <th class="text-center">Range</th>
+                                    <th class="text-center">RoF</th>
+                                    <th class="text-center">AP</th>
+                                    <th class="text-center">Wt</th>
+                                    <th class="text-center">Equipped</th>
+                                    <th class="text-center">Notes</th>
+                                </tr>
+                                </thead>
+                                    <tbody ng-if="gearWShowAll === false" >
+                                        <tr ng-repeat="w in cur_char.weapons | orderBy:name | limitTo:5">
+                                            <td>{{w.name}}</td>
+                                            <td>{{w.dmg}}</td>
+                                            <td>{{w.range}}</td>
+                                            <td>{{w.rof}}</td>
+                                            <td>{{w.ap}}</td>
+                                            <td>{{w.wt}}</td>
+                                            <td>{{w.equipped}}</td>
+                                            <td>{{w.text}}</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody ng-if="gearWShowAll === true">
+                                        <tr ng-repeat="w in cur_char.weapons | orderBy:name">
+                                            <td>{{w.name}}</td>
+                                            <td>{{w.dmg}}</td>
+                                            <td>{{w.range}}</td>
+                                            <td>{{w.rof}}</td>
+                                            <td>{{w.ap}}</td>
+                                            <td>{{w.wt}}</td>
+                                            <td>{{w.equipped}}</td>
+                                            <td>{{w.text}}</td>
+                                        </tr>
+                                    </tbody>
+                            </table>
+                            <div ng-if="gearWShowAll === false">
+                                <button class="btn btn-primary btn-xs" ng-click="flipBoolean('gearWShow')">More...</button>
+                            </div>
+                            <div ng-if="gearWShowAll === true">
+                                <button class="btn btn-primary btn-xs" ng-click="flipBoolean('gearWShow')">Less...</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-if="gearWEdit === true">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">
+                        Weapons:
+                        <button class="btn btn-danger" ng-click="saveCharacter('gearW')">Save</button>
+                    </div>
+                    <!--Change skills from array to just individual skills-->
+                    <div class="panel-body text-center">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-condensed">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">Name</th>
+                                    <th class="text-center">Dmg</th>
+                                    <th class="text-center">Range</th>
+                                    <th class="text-center">RoF</th>
+                                    <th class="text-center">AP</th>
+                                    <th class="text-center">Wt</th>
+                                    <th class="text-center">Equip</th>
+                                    <th class="text-center">Mod Stat</th>
+                                    <th class="text-center">Mod Val</th>
+                                    <th class="text-center">Notes</th>
+                                    <th class="text-center">Remove</th>
+                                </tr>
+                                </thead>
+                                <tbody ng-if="gearWShowAll === false">
+                                    <tr ng-repeat="w in cur_char.weapons | limitTo:5">
+                                        <td><input class="form-control text-center" type="text" ng-model="w.name"/></td>
+                                        <td><input class="form-control text-center" type="text" ng-model="w.dmg"/></td>
+                                        <td><input class="form-control text-center" type="text" ng-model="w.range"/></td>
+                                        <td><input class="form-control text-center" type="text" ng-model="w.rof"/></td>
+                                        <td><input class="form-control text-center" type="text" ng-model="w.ap"/></td>
+                                        <td><input class="form-control text-center" type="text" ng-model="w.wt"/></td>
+                                        <td>{{w.equipped}}</td>
+                                        <td>{{w.modType}}</td>
+                                        <td>{{w.modNum}}</td>
+                                        <td><input class="form-control text-center" type="text" ng-model="w.text"/></td>
+                                        <td><button class="btn btn-danger btn-xs" ng-click="remove($index)">Delete</button></td>
+                                    </tr>
+                                </tbody>
+
+                                <tbody ng-if="gearWShowAll === true">
+                                    <tr ng-repeat="w in cur_char.weapons">
+                                        <td><input class="form-control text-center" type="text" ng-model="w.name"/></td>
+                                        <td><input class="form-control text-center" type="text" ng-model="w.dmg"/></td>
+                                        <td><input class="form-control text-center" type="text" ng-model="w.range"/></td>
+                                        <td><input class="form-control text-center" type="text" ng-model="w.rof"/></td>
+                                        <td><input class="form-control text-center" type="text" ng-model="w.ap"/></td>
+                                        <td><input class="form-control text-center" type="text" ng-model="w.wt"/></td>
+                                        <td>{{w.equipped}}</td>
+                                        <td>{{w.modType}}</td>
+                                        <td>{{w.modNum}}</td>
+                                        <td><input class="form-control text-center" type="text" ng-model="w.text"/></td>
+                                        <td><button class="btn btn-danger btn-xs" ng-click="remove($index)">Delete</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div ng-if="gearWShowAll === false">
+                                <button class="btn btn-primary btn-xs" ng-click="flipBoolean('gearWShow')">More...</button>
+                            </div>
+                            <div ng-if="gearWShowAll === true">
+                                <button class="btn btn-primary btn-xs" ng-click="flipBoolean('gearWShow')">Less...</button>
+                            </div>
+                            <br/>
+                            <button class="btn btn-primary btn-xs" ng-click="newWeapon()">Add Weapon</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10 text-center">
+
+            <div ng-if="gearAEdit === false">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">
+                        Armor:
+                        <button class="btn btn-primary" ng-click="flipBoolean('gearA')">Edit</button>
+                    </div>
+                    <!--Change skills from array to just individual skills-->
+                    <div class="panel-body text-center">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Name</th>
+                                        <th class="text-center">Area</th>
+                                        <th class="text-center">Def Value</th>
+                                        <th class="text-center">WT</th>
+                                        <th class="text-center">Equipped</th>
+                                        <th class="text-center">Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody ng-if="gearAShowAll === false" >
+                                    <tr ng-repeat="a in cur_char.armor | orderBy:name | limitTo:5">
+                                        <td>{{a.name}}</td>
+                                        <td>{{a.area}}</td>
+                                        <td>{{a.armorValue}}</td>
+                                        <td>{{a.wt}}</td>
+                                        <td>{{a.equipped}}</td>
+                                        <td>{{a.text}}</td>
+                                    </tr>
+                                </tbody>
+                                <tbody ng-if="gearAShowAll === true">
+                                    <tr ng-repeat="a in cur_char.armor | orderBy:name">
+                                        <td>{{a.name}}</td>
+                                        <td>{{a.area}}</td>
+                                        <td>{{a.armorValue}}</td>
+                                        <td>{{a.wt}}</td>
+                                        <td>{{a.equipped}}</td>
+                                        <td>{{a.text}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div ng-if="gearAShowAll === false">
+                                <button class="btn btn-primary btn-xs" ng-click="flipBoolean('gearAShow')">More...</button>
+                            </div>
+                            <div ng-if="gearAShowAll === true">
+                                <button class="btn btn-primary btn-xs" ng-click="flipBoolean('gearAShow')">Less...</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-if="gearAEdit === true">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">
+                        Armor:
+                        <button class="btn btn-danger" ng-click="saveCharacter('gearA')">Save</button>
+                    </div>
+                    <!--Change skills from array to just individual skills-->
+                    <div class="panel-body text-center">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-condensed">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">Name</th>
+                                    <th class="text-center">Area</th>
+                                    <th class="text-center">Def Value</th>
+                                    <th class="text-center">WT</th>
+                                    <th class="text-center">Equipped</th>
+                                    <th class="text-center">Mod Stat</th>
+                                    <th class="text-center">Mod Val</th>
+                                    <th class="text-center">Notes</th>
+                                    <th class="text-center">Remove</th>
+                                </tr>
+                                </thead>
+                                <tbody ng-if="gearAShowAll === false">
+                                    <tr ng-repeat="a in cur_char.armor | limitTo:5">
+                                        <td><input class="form-control text-center" type="text" ng-model="a.name"/></td>
+                                        <td><input class="form-control text-center" type="text" ng-model="a.area"/></td>
+                                        <td><input class="form-control text-center" type="text" ng-model="a.armorValue"/></td>
+                                        <td><input class="form-control text-center" type="text" ng-model="a.wt"/></td>
+                                        <td>{{a.equipped}}</td>
+                                        <td>{{a.modType}}</td>
+                                        <td>{{a.modNum}}</td>
+                                        <td><input class="form-control text-center" type="text" ng-model="a.text"/></td>
+                                        <td><button class="btn btn-danger btn-xs" ng-click="remove($index)">Delete</button></td>
+                                    </tr>
+                                </tbody>
+
+                                <tbody ng-if="gearAShowAll === true">
+                                    <tr ng-repeat="a in cur_char.armor">
+                                        <td><input class="form-control text-center" type="text" ng-model="a.name"/></td>
+                                        <td><input class="form-control text-center" type="text" ng-model="a.area"/></td>
+                                        <td><input class="form-control text-center" type="text" ng-model="a.armorValue"/></td>
+                                        <td><input class="form-control text-center" type="text" ng-model="a.wt"/></td>
+                                        <td>{{a.equipped}}</td>
+                                        <td>{{a.modType}}</td>
+                                        <td>{{a.modNum}}</td>
+                                        <td><input class="form-control text-center" type="text" ng-model="a.text"/></td>
+                                        <td><button class="btn btn-danger btn-xs" ng-click="remove($index)">Delete</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div ng-if="gearAShowAll === false">
+                                <button class="btn btn-primary btn-xs" ng-click="flipBoolean('gearAShow')">More...</button>
+                            </div>
+                            <div ng-if="gearAShowAll === true">
+                                <button class="btn btn-primary btn-xs" ng-click="flipBoolean('gearAShow')">Less...</button>
+                            </div>
+                            <br/>
+                            <button class="btn btn-primary btn-xs" ng-click="newArmor()">Add Armor</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10 text-center">
+
+            <div ng-if="gearEdit === false">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">
+                        Gear:
+                        <button class="btn btn-primary" ng-click="flipBoolean('gear')">Edit</button>
+                    </div>
+                    <!--Change skills from array to just individual skills-->
+                    <div class="panel-body text-center">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-condensed">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">Name</th>
+                                    <th class="text-center">Area</th>
+                                    <th class="text-center">Qty</th>
+                                    <th class="text-center">Wt</th>
+                                    <th class="text-center">Equipped</th>
+                                    <th class="text-center">Notes</th>
+                                </tr>
+                                </thead>
+                                <tbody ng-if="gearShowAll === false" >
+                                <tr ng-repeat="g in cur_char.gear | orderBy:name | limitTo:10">
+                                    <td>{{g.name}}</td>
+                                    <td>{{g.area}}</td>
+                                    <td>{{g.qty}}</td>
+                                    <td>{{g.wt}}</td>
+                                    <td>{{g.equipped}}</td>
+                                    <td>{{g.text}}</td>
+                                </tr>
+                                </tbody>
+                                <tbody ng-if="gearShowAll === true">
+                                <tr ng-repeat="g in cur_char.gear | orderBy:name">
+                                    <td>{{g.name}}</td>
+                                    <td>{{g.area}}</td>
+                                    <td>{{g.qty}}</td>
+                                    <td>{{g.wt}}</td>
+                                    <td>{{g.equipped}}</td>
+                                    <td>{{g.text}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div ng-if="gearShowAll === false">
+                                <button class="btn btn-primary btn-xs" ng-click="flipBoolean('gearShow')">More...</button>
+                            </div>
+                            <div ng-if="gearShowAll === true">
+                                <button class="btn btn-primary btn-xs" ng-click="flipBoolean('gearShow')">Less...</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-if="gearEdit === true">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">
+                        Gear:
+                        <button class="btn btn-danger" ng-click="saveCharacter('gear')">Save</button>
+                    </div>
+                    <!--Change skills from array to just individual skills-->
+                    <div class="panel-body text-center">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-condensed">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">Name</th>
+                                    <th class="text-center">Area</th>
+                                    <th class="text-center">Qty</th>
+                                    <th class="text-center">Wt</th>
+                                    <th class="text-center">Equipped</th>
+                                    <th class="text-center">Mod Stat</th>
+                                    <th class="text-center">Mod Val</th>
+                                    <th class="text-center">Notes</th>
+                                    <th class="text-center">Remove</th>
+                                </tr>
+                                </thead>
+                                <tbody ng-if="gearShowAll === false">
+                                <tr ng-repeat="g in cur_char.gear | limitTo:10">
+                                    <td><input class="form-control text-center" type="text" ng-model="g.name"/></td>
+                                    <td><input class="form-control text-center" type="text" ng-model="g.area"/></td>
+                                    <td><input class="form-control text-center" type="text" ng-model="g.qty"/></td>
+                                    <td><input class="form-control text-center" type="text" ng-model="g.wt"/></td>
+                                    <td>{{g.equipped}}</td>
+                                    <td>{{g.modType}}</td>
+                                    <td>{{g.modNum}}</td>
+                                    <td><input class="form-control text-center" type="text" ng-model="g.text"/></td>
+                                    <td><button class="btn btn-danger btn-xs" ng-click="remove($index)">Delete</button></td>
+                                </tr>
+                                </tbody>
+
+                                <tbody ng-if="gearShowAll === true">
+                                <tr ng-repeat="g in cur_char.gear">
+                                    <td><input class="form-control text-center" type="text" ng-model="g.name"/></td>
+                                    <td><input class="form-control text-center" type="text" ng-model="g.area"/></td>
+                                    <td><input class="form-control text-center" type="text" ng-model="g.qty"/></td>
+                                    <td><input class="form-control text-center" type="text" ng-model="g.wt"/></td>
+                                    <td>{{g.equipped}}</td>
+                                    <td>{{g.modType}}</td>
+                                    <td>{{g.modNum}}</td>
+                                    <td><input class="form-control text-center" type="text" ng-model="g.text"/></td>
+                                    <td><button class="btn btn-danger btn-xs" ng-click="remove($index)">Delete</button></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div ng-if="gearShowAll === false">
+                                <button class="btn btn-primary btn-xs" ng-click="flipBoolean('gearShow')">More...</button>
+                            </div>
+                            <div ng-if="gearShowAll === true">
+                                <button class="btn btn-primary btn-xs" ng-click="flipBoolean('gearShow')">Less...</button>
+                            </div>
+                            <br/>
+                            <button class="btn btn-primary btn-xs" ng-click="newGear()">Add Gear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>    

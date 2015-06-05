@@ -1,0 +1,22 @@
+<div ng-controller="UserController">
+    <h1>{{cur_user.name}}'s Profile</h1>
+    <br/>
+    <h2>Email: {{cur_user.email}}</h2>
+    <br/>
+    <h2>Name: {{cur_user.name}}</h2>
+    <br/>
+    <h3>Change Name: </h3>
+    <input type="text" class="form-control input-sm text-center" placeholder="New name..." ng-model="modName"/>
+    <br/>
+    <button class="btn btn-primary" ng-click="modAcctName(modName)">Change Name</button>
+    <br/>
+    <h2>Password Change: </h2>
+    <br/>
+    <h3>New Password: </h3>
+    <input type="text" class="form-control input-sm text-center" placeholder="New pass..." ng-model="modPass1"/>
+    <br/>
+    <h3>Retype Password: </h3>
+    <input type="text" class="form-control input-sm text-center" placeholder="Retype pass..." ng-model="modPass2"/>
+    <br/>
+    <button class="btn btn-primary" ng-click="modAcctPass(modPass1, modPass2)">Change Password</button>
+</div>

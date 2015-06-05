@@ -1,0 +1,17 @@
+body
+{
+ padding-top: 70px;
+ background-color: black;
+ color: white;
+}
+
+.footer
+{
+    height: 20px;
+}
+
+.roll-output
+{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}

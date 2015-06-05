@@ -1,0 +1,245 @@
+body
+{
+ padding-top: 70px;
+ background-color: black;
+ background-image: url("http://subtlepatterns.com/patterns/zigzag.png");
+ color: #ccc3cd;
+}
+
+.textBlock
+{
+    background-color: #ff4747;
+    color: black;
+    font-weight: bold;
+    border: 3px solid;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px #888888;
+}
+
+.navbar-inverse {
+    background-color: #AC362E;
+    border-color: #000000;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #E4E4E4;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #E4E4E4;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: #E4E4E4;
+}
+
+
+.footer
+{
+    height: 20px;
+}
+
+.roll-output
+{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.modal-title
+{
+ color: black;   
+}
+
+.jumbotron
+{
+    background-color: #E4E4E4;
+    color: black;
+}
+
+.darkLink {
+    color: #144679;
+}
+
+.well
+{
+    background-color: #E4E4E4;
+    color: black;
+}
+
+.boldList
+{
+    font-weight: bold;
+}
+
+.modal-header {
+    background-color: #3696F8;
+    color: black;
+}
+
+.modal-body {
+    background-color: #E4E4E4;
+    color: black;
+    padding: 0px;
+}
+
+.modal-footer {
+    background-color: #E4E4E4;
+    color: black;
+    padding: 0px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.panel-default
+{
+    border-color: #3696F8;
+}
+
+.panel-default .panel-heading
+{
+    background-color: #3696F8;
+    color: black;
+}
+
+.panel-default .panel-body
+{
+    background-color: #E4E4E4;
+    color: black;
+    padding: 0px;
+}
+
+.panelBodyText
+{
+    color: black;
+    font-size: x-small;
+}
+
+.panelTitleText
+{
+    color: black;
+    font-size: small;
+    font-weight: bold;
+}
+
+.panel-heading.charPanel {
+    background-color: #3696F8;
+    color: black;
+}
+
+.panel-body.charPanel {
+    background-color: #E4E4E4;
+    color: black;
+    padding: 0px;
+}
+
+.titlePanel {
+    padding: 0px;
+    background-color: #3696F8;
+    color: black;
+}
+
+.characterTitle
+{
+    color: black;
+    font-size: medium;
+    text-decoration: underline;
+}
+
+.img-center {margin:0 auto;}
+
+.btn-primary {
+    color: #E4E4E4;
+    background-color: #144679;
+    border-color: #144679;
+}
+
+.btn-danger {
+    color: #E4E4E4;
+    background-color: #AC362E;
+    border-color: #AC362E;
+}
+
+.btn-default {
+    color: black;
+    background-color: #b0b0b0;
+    border-color: #b0b0b0;
+}
+
+.btnPrimaryBordered
+{
+    color: #fff;
+    background-color: #144679;
+    border: 3px solid;
+    border-color: #000000;
+}
+
+.btn-xlrg {
+    padding: 18px 28px;
+    font-size: 22px;
+    line-height: normal;
+}
+
+.btn-mod-button
+{
+    padding: 8px 14px;
+    font-size: 14px;
+    line-height: normal;
+}
+
+/*.input .form-control-break*/
+/*{*/
+    /* display: block; */
+    /* width: 100%; */
+    /*height: 34px;*/
+    /*padding: 6px 12px;*/
+    /*font-size: 14px;*/
+    /*line-height: 1.428571429;*/
+    /*color: #555;*/
+    /*background-color: #fff;*/
+    /*background-image: none;*/
+    /*border: 1px solid #ccc;*/
+    /*border-radius: 4px;*/
+    /*-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);*/
+    /*box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);*/
+    /*-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;*/
+    /*transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;*/
+/*}*/
+
+.horzDivider
+{
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+    zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs, .nav-pills {
+    text-align:center;
+}
+
+/*Removes empty href to stop routing*/
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }

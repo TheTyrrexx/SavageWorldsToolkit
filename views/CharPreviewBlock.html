@@ -1,0 +1,108 @@
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading" >
+            {{char.basics.name}} / {{char.basics.concept}}
+            <button type="button" class="btn btn-danger" ng-href="" ng-click="gotoChar(char)">Open</button>
+        </div>
+        <div class="panel-body text-center">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="panelTitleText">Status:</div>                   
+                    <div class="panelBodyText">
+                        Wounds: {{char.health.wounds}}
+                        <br/>
+                        Fatigue: {{char.health.fatigue}}
+                        <br/>
+                        Sanity: {{char.health.sanity}}
+                        <br/>
+                        Bennies: {{char.health.bennies}}
+                        <br/>
+                        Power Points: {{char.health.currentPowerPoints}}/{{char.health.maxPowerPoints}}
+                    </div>    
+                </div>
+                <div class="col-sm-6">
+                    <div class="panelTitleText">Attributes:</div>
+                    <div class="panelBodyText">
+                        Agi: {{char.attributes.agi}} - Mod: {{char.attributes.agiMod + char.attributes.agiTempMod}}
+                        <br/>
+                        Smt: {{char.attributes.smt}} - Mod: {{char.attributes.smtMod + char.attributes.smtTempMod}}
+                        <br/>
+                        Str: {{char.attributes.str}} - Mod: {{char.attributes.strMod + char.attributes.strTempMod}}
+                        <br/>
+                        Vig: {{char.attributes.vig}} - Mod: {{char.attributes.vigMod + char.attributes.vigTempMod}}
+                        <br/>
+                        Spr: {{char.attributes.spi}} - Mod: {{char.attributes.spiMod + char.attributes.spiTempMod}}
+                    </div>    
+                </div>
+            </div>
+            <div class="horzDivider"></div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="panelTitleText">Derived Attributes:</div>
+                    <div class="panelBodyText">
+                        Charisma: {{char.derivedAttributes.cha}}
+                        <br/>
+                        Toughness: {{char.derivedAttributes.tough}}
+                        <br/>
+                        Defense: {{char.derivedAttributes.tough}}
+                        <br/>
+                        Parry: {{char.derivedAttributes.parry}}
+                        <br/>
+                        Pace: {{char.derivedAttributes.pace}}
+                    </div>   
+                </div>
+                <div class="col-sm-6">
+                    <div class="panelTitleText">Skills:</div>
+                    <div class="panelBodyText">
+                        Fighting: {{char.skills.fighting.rank}} - Mod: {{char.skills.fighting.mod + char.skills.fighting.tempMod}}<br/>
+                        Shooting: {{char.skills.shooting.rank}} - Mod: {{char.skills.shooting.mod}} + {{char.skills.shooting.tempMod}}<br/>
+                        Casting: {{char.skills.casting.rank}} - Mod: {{char.skills.casting.mod}} + {{char.skills.casting.tempMod}}<br/>
+                    </div>
+                </div>
+            </div>
+            <div class="horzDivider"></div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="panelTitleText">Edges:</div>
+                    <div ng-repeat="e in char.edges" class="panelBodyText">
+                        {{e.name}}
+                        <br/>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="panelTitleText">Hinderences:</div>
+                    <div ng-repeat="h in char.hindrances" class="panelBodyText">
+                        {{h.name}}
+                        <br/>
+                    </div>
+                </div>
+            </div>            
+            <div class="horzDivider"></div>
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                    <div class="panelTitleText">Primary Weapon:</div>
+                    <div ng-repeat="w in char.weapons" class="panelBodyText">
+                        <div ng-if="w.equipped === true">
+                            {{w.name}} : {{w.dmg}}
+                        </div>
+                    </div>    
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+            <div class="horzDivider"></div>
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                    <div class="panelTitleText">Primary Powers:</div>
+                    <div ng-repeat="p in char.powers" class="panelBodyText">
+                        <div ng-if="p.primary === true">
+                            {{p.name}} : {{p.text}}
+                        </div>
+                    </div>    
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+        </div>
+    </div>
+</div>

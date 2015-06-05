@@ -1,0 +1,35 @@
+<div ng-controller="CharController">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h2>Characters</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4 text-center">
+                Campaign:
+                <br/>
+                <select class="form-control">
+                    <option>World of Darkness</option>
+                    <option>Essence of the Void</option>
+                    <option>Deadheads</option>
+                </select>
+            </div>
+            <div class="col-xs-4 text-center">
+                PC/NPC?
+                <br/>
+                <button class="btn btn-primary">PC</button>
+                <button class="btn btn-danger">NPC</button>
+            </div>
+            <div class="col-xs-4 text-center">
+                <br/>
+                <button class="btn btn-primary" ng-click="getUserChars('tyrrexx5@gmail.com', 'WoD', 'true')">Get Characters</button>
+                <button class="btn btn-primary" ng-click="getAllChars()">Get All Characters</button>           
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <charpreviewblock ng-repeat="char in chars" char="char" class="col-md-4"></charpreviewblock>
+        </div>
+    </div>
+</div>
