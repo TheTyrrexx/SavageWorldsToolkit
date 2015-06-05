@@ -1,0 +1,283 @@
+{
+    "owner": "owner@owner.com",
+    "campaign": "Campaign",
+    "pc": "false",
+    "notes": "Notes",
+    "basics": {
+        "name": "Name",
+        "player": "Player",
+        "race": "Race",
+        "rank": "0",
+        "xp": "0",
+        "setting": "Setting",
+        "concept": "Concept",
+        "age": "0",
+        "eye": "Eye Color",
+        "hair": "Hair Color",
+        "ht": "0ft 0in",
+        "wt": "0lb",
+        "marks": "Marks",
+        "quote": "Quote",
+        "backstory": "Back story."
+    },
+    "health": {
+        "wounds": "0",
+        "fatigue": "0",
+        "sanity": "0",
+        "woundPenalty": "0",
+        "fatiguePenalty": "0",
+        "currentPowerPoints": "0",
+        "maxPowerPoints": "0",
+        "bennies": "3",
+        "shaken": "false"
+    },
+    "attributes": {
+        "agi": "4",
+        "agiMod": "0",
+        "agiTempMod": "0",
+        "smt": "4",
+        "smtMod": "0",
+        "smtTempMod": "0",
+        "str": "4",
+        "strMod": "0",
+        "strTempMod": "0",
+        "spi": "4",
+        "spiMod": "0",
+        "spiTempMod": "0",
+        "vig": "4",
+        "vigMod": "0",
+        "vigTempMod": "0"
+    },
+    "derivedAttributes": {
+        "cha": "0",
+        "chaMod": "0",
+        "chaTempMod": "0",
+        "pace": "6",
+        "paceMod": "0",
+        "paceTempMod": "0",
+        "parry": "4",
+        "parryMod": "0",
+        "parryTempMod": "0",
+        "tough": "4",
+        "toughMod": "0",
+        "toughTempMod": "0",
+        "curCarry": "0",
+        "maxCarry": "20",
+        "carryMod": "0",
+        "carryTempMod": "0",
+        "carryPenalty": "0"
+    },
+    "edges": [
+
+    ],
+    "hindrances": [
+
+    ],
+    "skills": {
+        "boating": {
+            "atr": "agi",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "casting": {
+            "atr": "smt",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "climbing": {
+            "atr": "str",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "driving": {
+            "atr": "agi",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "fighting": {
+            "atr": "agi",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "gambling": {
+            "atr": "smt",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "healing": {
+            "atr": "smt",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "intimidation": {
+            "atr": "spi",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "investigation": {
+            "atr": "smt",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "knowledge": {
+            "atr": "smt",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "lockpicking": {
+            "atr": "agi",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "notice": {
+            "atr": "smt",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "persuasion": {
+            "atr": "spi",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "piloting": {
+            "atr": "agi",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "repair": {
+            "atr": "smt",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "riding": {
+            "atr": "agi",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "shooting": {
+            "atr": "agi",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "stealth": {
+            "atr": "agi",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "streetwise": {
+            "atr": "smt",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "survival": {
+            "atr": "smt",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "swimming": {
+            "atr": "agi",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "taunt": {
+            "atr": "smt",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "technology": {
+            "atr": "smt",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "throwing": {
+            "atr": "agi",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        },
+        "tracking": {
+            "atr": "smt",
+            "rank": "0",
+            "mod": "0",
+            "tempMod": "0",
+            "text": ""
+        }
+    },
+    "specialAbilities": [
+
+    ],
+    "injuries": [
+
+    ],
+    "positiveEffects": [
+
+    ],
+    "negativeEffects": [
+
+    ],
+    "weapons": [
+
+    ],
+    "armor": [
+
+    ],
+    "gear": [
+
+    ],
+    "powers": [
+
+    ],
+    "contacts": [
+
+    ],
+    "vehicles": [
+
+    ]
+}
